@@ -1,0 +1,33 @@
+﻿<%= provide(:title, "Коробовка") %>
+
+<%= javascript_tag do %>      
+var map;                      
+$(document).ready(function(){ 
+  map = new GMaps({           
+    el: '#map',               
+    lat: 49.591752,           
+    lng: 31.975222            
+  });                         
+  map.addMarker({             
+    lat: 49.591752,           
+    lng: 31.975222,           
+    mouseover: function(e){   
+      if(console.log)         
+        console.log(e);       
+    }                         
+  });                         
+});                           
+<% end %>                     
+
+<div class="row">
+  <div class="text-map">
+    <h4>Коробовка</h4>
+  </div>
+  <div id="map">
+  </div>
+</div>
+<div class="row">
+  <div class="text-link">
+      <h5><%= link_to 'Назад', root_path, method: :get %></h5>
+  </div>
+</div>

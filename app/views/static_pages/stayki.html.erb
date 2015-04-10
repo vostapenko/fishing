@@ -1,0 +1,33 @@
+﻿<%= provide(:title, "Стайки") %>
+
+<%= javascript_tag do %>
+var map;                       
+$(document).ready(function(){  
+  map = new GMaps({            
+    el: '#map',                
+    lat: 50.093109,            
+    lng: 30.906976             
+  });                          
+  map.addMarker({              
+    lat: 50.093109,            
+    lng: 30.906976,            
+    mouseover: function(e){    
+      if(console.log)          
+        console.log(e);        
+    }                          
+  });                          
+});                            
+<% end %>
+
+<div class="row">
+  <div class="text-map">
+    <h4>Стайки</h4>
+  </div>
+  <div id="map">
+  </div>
+</div>
+<div class="row">
+  <div class="text-link">
+      <h5><%= link_to 'Назад', root_path, method: :get %></h5>
+  </div>
+</div>
