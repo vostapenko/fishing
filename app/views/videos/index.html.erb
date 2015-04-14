@@ -1,0 +1,56 @@
+<%= provide(:title, "Видео") %>
+
+<div class="row">
+  <nav>
+    <ul class="navigation">
+      <li ><%= link_to "Выйти", '#' %></li>
+      <li ><%= link_to "Добавить видео", new_video_path %></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="row">
+  <div class="videos">
+    <% if @videos.any? %>
+      <% @videos.in_groups_of(2) do |group| %>
+          <% group.each do |video| %>
+            <% if video %>
+              <div class="col-md-6">
+                <div class="yt_video thumbnail">
+                  <%=  content_tag(:iframe, nil, src: "http://www.youtube.com/embed/#{video.uid}", allowfullscreen: true, rameborder: 0) %>
+                    <div class="caption">
+                      <div class="title">
+                        <h6><%= video.title %></h6>
+                      </div>
+                      <table class="text">
+                        <tr>
+                          <td>
+                            Продолжительность: <b><%= video.duration %></b>
+                          </td>
+                          <td class="rightstr">
+                            <span class="glyphicon glyphicon-thumbs-up"></span> <%= video.likes %>
+                            <span class="glyphicon glyphicon-thumbs-down"></span> <%= video.dislikes %>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <%= will_paginate %>  
+  </div>
+</div>
+
+<div class="row">
+  <div class="text-down">
+    <%= render 'shared/social' %>
+  </div>
+</div>

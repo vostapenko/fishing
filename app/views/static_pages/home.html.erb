@@ -9,7 +9,6 @@
 </div>
 
 <div class="row">
-    <center>
       <div id="slider1_container" class="img_container">
         <div u="slides" class="slides_img">
           <%= render 'shared/slides' %>
@@ -23,7 +22,6 @@
           </div>
         </div>
       </div>
-   </center>
 </div>
 
 <div class="row">
@@ -33,9 +31,6 @@
     <p><%= link_to('Рыбалка выходного дня', weekend_path) %> - выезд в живописные и богатые рыбой места, такие как: <%= link_to('Стайки', stayki_path) %> (70 км от города Киева), <%= link_to('Коробовка', korobovka_path) %> (180 км от города Киева).</p>
 
     <%= render 'shared/contacts' %>
-
-    <ul class="button">                                    
-      <li><%= social_share_button_tag('Рыбачьте с нами.', :url => "http://www.rbk.kiev.ua") %></li> 
-    </ul>                                                  
+    <%= render 'shared/social' %>
   </div>
 </div>

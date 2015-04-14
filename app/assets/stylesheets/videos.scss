@@ -1,0 +1,89 @@
+// Place all the styles related to the Videos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$FloralWhite: #FFFAF0;    
+$Linen: #FAF0E6;
+
+.yt_video {
+  width: 330px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+.caption {
+  font-size: 0.8em;
+}
+
+.title {             
+  text-align: center;
+  font-weight: bold; 
+  font-size: 1.2em;  
+}                    
+
+.videos {
+  padding-top: 0px;     
+  padding-bottom: 0px; 
+  padding-left: 100px;  
+  padding-right: 100px; 
+}
+
+.navigation {            
+  width: 725px;
+  padding-top: 5px;      
+  padding-bottom: 0px;   
+  padding-left: 0px;   
+  padding-right: 0px;  
+  margin-left: auto;  
+  margin-right: auto; 
+  background-color: $Linen;
+  border-radius: 5px;
+
+  .navigation ul, li {
+    list-style: none;
+    display: inline;
+    padding: 5px;
+  }
+}                        
+
+.pagination {
+  .pagination a {                
+    text-decoration: none;       
+    border: none;                
+    background: $FloralWhite;    
+  }                              
+                                 
+  .pagination a:hover {          
+    border-color: none;          
+    border-radius: 5px;
+  }                              
+
+  .pagination > .disabled > span, .pagination > .disabled > span:hover,
+  .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination
+  > .disabled > a:hover, .pagination > .disabled > a:focus {
+    background-color: $FloralWhite;    
+    cursor: not-allowed;
+  }
+}
+
+iframe {
+  width: 320px;
+  height: 240px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.text {
+  width:  100%;
+  border-spacing: 0;
+}
+
+table.text td {
+  width: 70%;
+  vertical-align: top;
+}
+
+td.rightstr {
+  text-align: right; 
+}

@@ -11,6 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150410064350) do
+
+  create_table "videos", force: :cascade do |t|
+    t.string   "link",       limit: 255
+    t.string   "title",      limit: 255
+    t.string   "author",     limit: 255
+    t.string   "uid",        limit: 255
+    t.string   "duration",   limit: 255
+    t.integer  "likes",      limit: 4
+    t.integer  "dislikes",   limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
 end

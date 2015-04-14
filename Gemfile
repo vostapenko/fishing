@@ -11,6 +11,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'gmaps-rails'
 gem 'social-share-button'
+gem 'youtube_it'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 

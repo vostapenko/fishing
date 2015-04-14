@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get 'korobovka' => 'static_pages#korobovka'
   get 'stayki' => 'static_pages#stayki'
 
+  resources :videos, only: [:index, :new, :create, :destroy]
+
 end
