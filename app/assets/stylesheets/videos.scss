@@ -4,6 +4,8 @@
 
 $FloralWhite: #FFFAF0;    
 $Linen: #FAF0E6;
+$Gray: #CFCFCF;
+$DodgerBlue: #337ab7;
 
 .yt_video {
   width: 330px;
@@ -63,7 +65,18 @@ $Linen: #FAF0E6;
   .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination
   > .disabled > a:hover, .pagination > .disabled > a:focus {
     background-color: $FloralWhite;    
+    color: $Gray; 
     cursor: not-allowed;
+  }
+
+  .pagination > .active > a, .pagination > .active > a:hover, .pagination >
+  .active > a:focus, .pagination > .active > span, .pagination > .active >
+  span:hover, .pagination > .active > span:focus {
+    background-color: $Linen; 
+  }
+
+  .pagination .active > a {
+  color: $DodgerBlue;
   }
 }
 

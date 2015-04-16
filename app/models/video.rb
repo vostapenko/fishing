@@ -8,10 +8,10 @@ class Video < ActiveRecord::Base
     self.uid = uid[2] if uid && uid[2]
 
     if self.uid.to_s.length != 11
-      self.errors.add(:link, 'is invalid.')
+      self.errors.add(:link, 'недействительна.')
       false
     elsif Video.where(uid: self.uid).any?
-      self.errors.add(:link, 'is not unique.')
+      self.errors.add(:link, 'уже добавлена.')
       false
     else
       get_additional_info

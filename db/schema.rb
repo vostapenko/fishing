@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150410064350) do
+ActiveRecord::Schema.define(version: 20150416112618) do
 
   create_table "videos", force: :cascade do |t|
     t.string   "link",       limit: 255
@@ -24,5 +24,7 @@ ActiveRecord::Schema.define(version: 20150410064350) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  add_index "videos", ["link"], name: "index_videos_on_link", unique: true, using: :btree
 
 end
