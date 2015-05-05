@@ -1,15 +1,12 @@
 <% if object.errors.any? %>
-  <div class="panel panel-danger">
-    <div class="panel-heading">
-      <h3 class="panel-title">The following errors were found while submitting the form:</h3>
+  <div class="error_explanation">
+    <div class="alert alert-error">
+      Данная форма содержит <%= pluralize(object.errors.count, "ошибки") %>
     </div>
-  
-    <div class="panel-body">
-      <ul>
-        <% object.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+    <ul>
+      <% object.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
   </div>
 <% end %>

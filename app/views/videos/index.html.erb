@@ -4,7 +4,7 @@
   <nav>
     <ul class="navigation">
       <li ><%= link_to "Выйти", '#' %></li>
-      <li ><%= link_to "Добавить видео", new_video_path %></li>
+      <li ><%= link_to "Добавить видео", new_video_url %></li>
     </ul>
   </nav>
 </div>
@@ -17,7 +17,7 @@
             <% if video %>
               <div class="col-md-6">
                 <div class="yt_video thumbnail">
-                  <%=  content_tag(:iframe, nil, src: "http://www.youtube.com/embed/#{video.uid}", allowfullscreen: true, rameborder: 0) %>
+                  <%=  content_tag(:iframe, nil, src: "http://www.youtube.com/embed/#{video.video_id}", allowfullscreen: true, rameborder: 0) %>
                     <div class="caption">
                       <div class="title">
                         <h6><%= video.title %></h6>
@@ -53,6 +53,8 @@
     <%= will_paginate %>  
   </div>
 </div>
+
+<%= render 'shared/back' %>
 
 <div class="row">
   <div class="text-down">

@@ -1,0 +1,49 @@
+// Place all the styles related to the Videos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.fk_photo {
+  width: 330px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+.photos {
+  padding-top: 0px;     
+  padding-bottom: 0px; 
+  padding-left: 100px;  
+  padding-right: 100px; 
+}
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+} 
+
+.show {
+  width: 800px;
+  height: 685px;
+  margin-left: auto;  
+  margin-right: auto; 
+}
+
+.fk_link {
+  padding-top: 10px;     
+  font-family: helvetica;
+  text-align: center;   
+}

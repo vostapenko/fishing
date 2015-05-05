@@ -1,10 +1,10 @@
 class CreateVideos < ActiveRecord::Migration
   def change
     create_table :videos do |t|
-      t.string :link
-      t.string :title
+      t.string :video_id
+      t.string :video_url
       t.string :author
-      t.string :uid
+      t.string :title
       t.string :duration
       t.integer :likes
       t.integer :dislikes

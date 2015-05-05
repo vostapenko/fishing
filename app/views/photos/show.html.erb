@@ -1,0 +1,13 @@
+<div>
+  <%= link_to (image_tag @photo.photo_url, :class => "show"), photos_url %>
+</div>
+
+<div class="fk_link">
+  <%= link_to "Посмотреть фото на www.flickr.com", "https://www.flickr.com/photos/132289419@N08/#{@photo.photo_id}", target: "_blank"  %>
+</div>
+
+<div class="row">                                  
+  <div class="text-link">                  
+      <h5><%= link_to 'Назад', photos_url, method: :get %></h5>
+  </div>                                            
+</div>                                              

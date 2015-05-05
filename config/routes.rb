@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'photos/index'
+
   root 'static_pages#home'
   get 'day' => 'static_pages#day'
   get 'weekend' => 'static_pages#weekend'
@@ -7,5 +9,6 @@ Rails.application.routes.draw do
   get 'stayki' => 'static_pages#stayki'
 
   resources :videos, only: [:index, :new, :create, :destroy]
+  resources :photos
 
 end

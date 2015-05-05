@@ -1,0 +1,19 @@
+<%= provide(:title, "Добавить новое фото") %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h4>Добавить новое фото</h4>
+      <%= form_for(@photo, html: {:multipart => true}) do |f| %> 
+        <%= render 'shared/errors', object: f.object %>
+        <%= render 'fields', f: f %>
+        <br>
+        <%= f.submit %>
+      <% end %>                                     
+  </div>
+</div>
+
+<div class="row">                                     
+  <div class="text-link">           
+      <h5><%= link_to 'Назад', photos_url, method: :get %></h5>
+  </div>                                          
+</div>  

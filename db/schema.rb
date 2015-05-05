@@ -11,20 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416112618) do
+ActiveRecord::Schema.define(version: 20150418080559) do
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "photo_id",      limit: 255
+    t.string   "photo_url",     limit: 255
+    t.string   "title",         limit: 255
+    t.string   "description",   limit: 255
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "videos", force: :cascade do |t|
-    t.string   "link",       limit: 255
-    t.string   "title",      limit: 255
+    t.string   "video_id",   limit: 255
+    t.string   "video_url",  limit: 255
     t.string   "author",     limit: 255
-    t.string   "uid",        limit: 255
+    t.string   "title",      limit: 255
     t.string   "duration",   limit: 255
     t.integer  "likes",      limit: 4
     t.integer  "dislikes",   limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "videos", ["link"], name: "index_videos_on_link", unique: true, using: :btree
+  add_index "videos", ["video_url"], name: "index_videos_on_video_url", unique: true, using: :btree
 
 end

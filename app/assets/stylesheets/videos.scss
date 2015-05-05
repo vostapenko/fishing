@@ -14,6 +14,13 @@ $DodgerBlue: #337ab7;
   border-radius: 5px;
 }
 
+.videos {              
+  padding-top: 0px;    
+  padding-bottom: 0px; 
+  padding-left: 100px; 
+  padding-right: 100px;
+}                      
+
 .caption {
   font-size: 0.8em;
 }
@@ -23,13 +30,6 @@ $DodgerBlue: #337ab7;
   font-weight: bold; 
   font-size: 1.2em;  
 }                    
-
-.videos {
-  padding-top: 0px;     
-  padding-bottom: 0px; 
-  padding-left: 100px;  
-  padding-right: 100px; 
-}
 
 .navigation {            
   width: 725px;
@@ -50,6 +50,10 @@ $DodgerBlue: #337ab7;
 }                        
 
 .pagination {
+  display: inline-block;
+  padding-left: 0px;
+  margin: 0px 0px;
+  border-radius: 4px;
   .pagination a {                
     text-decoration: none;       
     border: none;                

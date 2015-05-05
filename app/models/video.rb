@@ -1,31 +1,31 @@
 class Video < ActiveRecord::Base
 
-  YT_LINK_FORMAT = /\A^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*\z/i
+  YT_video_url_FORMAT = /\A^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*\z/i
 
   before_create do
-    uid = link.match(YT_LINK_FORMAT)
+    video_id = video_url.match(YT_video_url_FORMAT)
 
-    self.uid = uid[2] if uid && uid[2]
+    self.video_id = video_id[2] if video_id && video_id[2]
 
-    if self.uid.to_s.length != 11
-      self.errors.add(:link, 'недействительна.')
+    if self.video_id.to_s.length != 11
+      self.errors.add(:video_url, 'недействительна.')
       false
-    elsif Video.where(uid: self.uid).any?
-      self.errors.add(:link, 'уже добавлена.')
+    elsif Video.where(video_id: self.video_id).any?
+      self.errors.add(:video_url, 'уже добавлена.')
       false
     else
       get_additional_info
     end
   end
 
-  validates :link, presence: true, format: YT_LINK_FORMAT
+  validates :video_url, presence: true, format: YT_video_url_FORMAT
 
   private
   
   def get_additional_info
     begin
       client = YouTubeIt::OAuth2Client.new(dev_key: ENV['YT_DEV'])
-      video = client.video_by(uid)
+      video = client.video_by(video_id)
       self.title = video.title
       self.duration = parse_duration(video.duration)
       self.author = video.author.name

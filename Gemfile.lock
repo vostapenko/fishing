@@ -81,6 +81,7 @@ GEM
     execjs (2.3.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    flickraw (0.9.8)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     gmaps-rails (0.0.2)
@@ -158,6 +159,7 @@ GEM
     raindrops (0.13.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    rmagick (2.14.0)
     ruby-progressbar (1.7.1)
     sass (3.4.12)
     sass-rails (5.0.1)
@@ -227,6 +229,7 @@ DEPENDENCIES
   byebug
   capistrano-rails
   coffee-rails (~> 4.1.0)
+  flickraw
   gmaps-rails
   jbuilder (~> 2.0)
   jquery-rails
@@ -234,6 +237,7 @@ DEPENDENCIES
   minitest-reporters
   mysql2
   rails (= 4.2.0)
+  rmagick
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   social-share-button

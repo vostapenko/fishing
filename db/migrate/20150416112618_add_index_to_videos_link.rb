@@ -1,5 +1,5 @@
 class AddIndexToVideosLink < ActiveRecord::Migration
   def change
-    add_index :videos, :link, unique: true
+    add_index :videos, :video_url, unique: true
   end
 end
