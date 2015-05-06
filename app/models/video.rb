@@ -18,7 +18,9 @@ class Video < ActiveRecord::Base
     end
   end
 
-  validates :video_url, presence: true, format: YT_video_url_FORMAT
+  validates :video_url, presence: true, 
+            format: YT_video_url_FORMAT, 
+            uniqueness: { case_sensitive: false } 
 
   private
   

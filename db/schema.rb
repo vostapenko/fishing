@@ -11,16 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418080559) do
+ActiveRecord::Schema.define(version: 20150506113939) do
 
   create_table "photos", force: :cascade do |t|
-    t.string   "photo_id",      limit: 255
-    t.string   "photo_url",     limit: 255
-    t.string   "title",         limit: 255
-    t.string   "description",   limit: 255
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "photo_id",    limit: 255
+    t.string   "photo_url",   limit: 255
+    t.string   "title",       limit: 255
+    t.string   "description", limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
+
+  add_index "photos", ["photo_url"], name: "index_photos_on_photo_url", unique: true, using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name",            limit: 255
+    t.string   "email",           limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "password_digest", limit: 255
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
   create_table "videos", force: :cascade do |t|
     t.string   "video_id",   limit: 255
@@ -30,8 +42,8 @@ ActiveRecord::Schema.define(version: 20150418080559) do
     t.string   "duration",   limit: 255
     t.integer  "likes",      limit: 4
     t.integer  "dislikes",   limit: 4
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "videos", ["video_url"], name: "index_videos_on_video_url", unique: true, using: :btree
