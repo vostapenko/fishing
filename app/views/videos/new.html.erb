@@ -1,14 +1,13 @@
 <%= provide(:title, "Добавить видео") %>
 
-
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <h4>Добавить новое видео</h4>
     <%= form_for(@video) do |f| %>
       <%= render 'shared/errors', object: f.object %>
       <%= render 'fields', f: f %>
-      </br>
-      <%= f.submit %>
+
+      <%= f.submit "Добавить видео", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

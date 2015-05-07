@@ -1,6 +1,6 @@
 <% if object.errors.any? %>
   <div class="error_explanation">
-    <div class="alert alert-error">
+    <div class="alert alert-danger">
       Данная форма содержит <%= pluralize(object.errors.count, "ошибки") %>
     </div>
     <ul>

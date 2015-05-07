@@ -98,6 +98,29 @@ ul, li {
   font-size: 1.1em;       
 }
 
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.flash {
+  width: 725px;
+  padding-top: 5px;    
+  padding-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* text */
 .text-up {             
   padding-top: 0px;    

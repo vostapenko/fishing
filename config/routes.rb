@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'signup' =>  'users#new'
-  get 'users/index'
+  resources :users
 
   get 'photos/index'
 
