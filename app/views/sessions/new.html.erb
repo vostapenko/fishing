@@ -1,0 +1,20 @@
+<%= provide(:title, "Войти") %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h4>Войти</h4>
+
+    <%= form_for(:session, url: login_path) do |f| %>
+      <%= render 'fields', f: f %>
+
+      <%= f.submit "Войти", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="row">            
+  <div class="text-link">                             
+     Новый пользователь?  <%= link_to "Зарегистрируйтесь сейчас!", signup_url %>    
+  </div>                                
+</div>

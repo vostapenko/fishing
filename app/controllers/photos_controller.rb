@@ -86,4 +86,5 @@ class PhotosController < ApplicationController
     flickr.access_token = ENV['FLICKR_ACCESS_TOKEN']
     flickr.access_secret = ENV['FLICKR_ACCESS_SECRET']
   end
+
 end
