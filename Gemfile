@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.0'
 gem 'bcrypt'
+gem 'faker'
 gem 'bootstrap-sass'
 gem 'mysql2'
 gem 'sass-rails', '~> 5.0'

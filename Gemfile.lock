@@ -80,6 +80,8 @@ GEM
     erubis (2.7.0)
     excon (0.45.1)
     execjs (2.3.0)
+    faker (1.4.3)
+      i18n (~> 0.5)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     flickraw (0.9.8)
@@ -231,6 +233,7 @@ DEPENDENCIES
   byebug
   capistrano-rails
   coffee-rails (~> 4.1.0)
+  faker
   flickraw
   gmaps-rails
   jbuilder (~> 2.0)

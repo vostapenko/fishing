@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $gray-medium-light: #eaeaea;
+$gray-lighter: #d3d3d3;
 
  @mixin box_sizing {
    -moz-box-sizing:    border-box;
@@ -57,7 +58,19 @@ input {
 }
 
 .users {
+  list-style: none;
   width: 725px;       
   margin-left: auto;  
   margin-right: auto; 
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
 }
+
+.text-head {          
+  padding-top: 10px;  
+  padding-bottom: 0px;
+  text-align: center; 
+}                     
