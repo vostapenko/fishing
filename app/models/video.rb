@@ -49,4 +49,5 @@ class Video < ActiveRecord::Base
       
       hr.to_s + ':' + min.to_s + ':' + sec.to_s
     end
-  end
+
+end
