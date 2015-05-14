@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150512114940) do
+ActiveRecord::Schema.define(version: 20150513124651) do
 
   create_table "photos", force: :cascade do |t|
     t.string   "photo_id",    limit: 255
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20150512114940) do
     t.string   "activation_digest", limit: 255
     t.boolean  "activated",         limit: 1,   default: false
     t.datetime "activated_at"
+    t.string   "reset_digest",      limit: 255
+    t.datetime "reset_sent_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
