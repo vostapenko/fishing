@@ -1,5 +1,18 @@
 <% provide(:title, 'Все пользователи') %>
 
+<div class="row">           
+  <nav>                     
+    <ul class="navigation"> 
+    <% if logged_in? %>                                       
+      <li><%= link_to "Выйти", logout_url, method: "delete" %></li>
+      <li><%= link_to "Фото", photos_url %></li>              
+      <li><%= link_to "Видео", videos_url %></li>             
+      <li><%= link_to current_user.name, current_user %></li>               
+    <% end %>                  
+    </ul>                   
+  </nav>                    
+</div>                      
+
 <div class="text-head">                             
   <h4>Пользователи</h4>
 </div>                                              
@@ -9,9 +22,7 @@
 </ul>
 
 <div class="row">                       
-  <div class="col-md-8 col-md-offset-3">
+  <div class="text-link">
     <%= will_paginate %>                
   </div>                                
 </div>                                  
-
-<%= render 'shared/back' %>

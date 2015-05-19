@@ -2,6 +2,7 @@ class PhotosController < ApplicationController
 
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
   before_action :set_flickr, only: [:show, :edit, :update, :create, :destroy]
+  before_action :admin_user, only: [:new, :create, :destroy]
 
   def index
     @photos = Photo.order('created_at DESC').paginate(page: params[:page], per_page: 4)

@@ -51,4 +51,10 @@ module SessionsHelper
     session[:forwarding_url] = request.url if request.get?
   end
 
+  private
+
+  def admin_user                                        
+    redirect_to(current_user) unless current_user.admin?
+  end                                                   
+
 end

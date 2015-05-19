@@ -3,7 +3,14 @@
 <div class="row">
   <nav>
     <ul class="navigation">
-      <%= render 'navbar' %>
+    <% if logged_in? %>        
+      <li><%= link_to "Выйти", logout_url, method: "delete" %></li>
+      <li><%= link_to "Фото", photos_url %></li> 
+      <% if current_user.admin? %>
+        <li><%= link_to "Добавить видео", new_video_url %></li>
+      <% end %>
+      <li><%= link_to current_user.name, current_user %></li> 
+    <% end %>                                 
     </ul>
   </nav>
 </div>
@@ -31,14 +38,12 @@
                             <span class="glyphicon glyphicon-thumbs-down"></span> <%= video.dislikes %>
                           </td>
                         </tr>
-                        <tr>
-                          <td>
-                            <% if logged_in? %>               
-                              <%= link_to "Удалить", video, method: :delete, data: { confirm: "Вы уверены ?" } %>
-                            <% end %>
-                          </td>
-                        </tr>
                       </table>
+                      <div class="title">
+                        <% if logged_in? && current_user.admin? %>
+                        <%= link_to "Удалить", video, method: :delete, data: { confirm: "Вы уверены ?" } %>
+                        <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -50,8 +55,8 @@
 </div>
 
 <div class="row">
-  <div class="col-md-4 col-md-offset-4">
-    <%= will_paginate %>  
+  <div class="text-link">
+    <%= will_paginate @data, previous_label: "Назад",next_label: "Вперёд" %>  
   </div>
 </div>
 

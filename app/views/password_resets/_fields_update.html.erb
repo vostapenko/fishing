@@ -1,7 +1,7 @@
 <%= hidden_field_tag :email, @user.email %>
 
-<%= f.label :password %>
+<%= f.label "Пароль" %>
 <%= f.password_field :password, class: 'form-control', required: true %>
 
-<%= f.label :password_confirmation, "Confirmation" %>
+<%= f.label "Подтверждение пароля" %>
 <%= f.password_field :password_confirmation, class: 'form-control', required: true %>

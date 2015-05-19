@@ -1,5 +1,7 @@
 class VideosController < ApplicationController
 
+  before_action :admin_user, only: [:new, :create, :destroy]
+
   def index 
     @videos = Video.order('created_at DESC').paginate(page: params[:page], per_page: 4)
   end

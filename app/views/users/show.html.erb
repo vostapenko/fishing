@@ -1,5 +1,19 @@
 <% provide(:title, @user.name) %>
 
+<div class="row">                                             
+  <nav>           
+    <ul class="navigation">                                   
+    <% if logged_in? %>                                  
+      <li><%= link_to "Выйти", logout_url, method: "delete" %></li>
+      <li><%= link_to "Изменить профиль", edit_user_url %></li>   
+      <li><%= link_to "Пользователи", users_url %></li>   
+      <li><%= link_to "Фото", photos_url %></li>              
+      <li><%= link_to "Видео", videos_url %></li>             
+    <% end %>                                                 
+    </ul>                                                     
+  </nav>                                                      
+</div>                                                        
+
 <div class="row">
   <div class="users">
     <aside class="col-md-4">
@@ -12,9 +26,3 @@
     </aside>
   </div>
 </div>
-
-<div class="row">                                              
-  <div class="text-link">                                      
-      <h5><%= link_to 'Назад', users_url, method: :get %></h5>
-  </div>                                                       
-</div>                                                         
